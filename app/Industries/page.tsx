@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Brain, GraduationCap, BarChart3, Cpu } from "lucide-react";
+import { HeartPulse, GraduationCap, Bus, BarChart3, Brain, Shield, Cpu } from "lucide-react";
 
-export default function EducationPage() {
+export default function IndustriesPage() {
   return (
     <div
       className="overflow-hidden bg-fixed bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80')",
+          "url('https://plus.unsplash.com/premium_photo-1698755473432-4a8e954685e0?auto=format&fit=crop&w=2057&q=80&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA==')",
       }}
     >
       {/* ================= HERO SECTION ================= */}
       <section className="relative min-h-[95vh] flex items-center">
-        <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-black/75 backdrop-blur-50" />
 
         <div className="relative w-11/12 md:w-5/6 mx-auto">
           <motion.h1
@@ -23,9 +23,9 @@ export default function EducationPage() {
             transition={{ duration: 0.8 }}
             className="text-white text-5xl md:text-6xl font-bold max-w-4xl leading-tight"
           >
-            Education as an
+            AI Transforming
             <span className="text-cyan-400 block">
-              Intelligent Industry
+              Core National Industries
             </span>
           </motion.h1>
 
@@ -35,107 +35,44 @@ export default function EducationPage() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="mt-6 text-lg text-gray-200 max-w-2xl"
           >
-            As India moves toward allocating 6% of GDP to education,
-            artificial intelligence can transform learning into a
-            measurable, scalable, and outcome-driven national industry.
+            Health, Education, and Transport form the backbone of
+            national development. AI ensures public investment
+            creates measurable, scalable, and inclusive impact.
           </motion.p>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="mt-10 px-8 py-4 bg-cyan-400 text-black font-semibold rounded-full hover:bg-cyan-300 transition duration-300 shadow-lg shadow-cyan-400/20"
-          >
-            Reimagining Learning
-          </motion.button>
         </div>
       </section>
 
-      {/* ================= THE PROBLEM ================= */}
+      {/* ================= HEALTH SECTION ================= */}
       <section className="relative py-28">
         <div className="absolute inset-0 bg-[#07121c]/95" />
-
-        <div className="relative w-11/12 md:w-5/6 mx-auto grid md:grid-cols-2 gap-16 items-center">
-
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              The <span className="text-cyan-400">Challenge</span>
-            </h2>
-
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Despite increased public investment, education systems
-              face uneven learning outcomes, teacher shortages,
-              outdated pedagogy models, and limited personalization.
-            </p>
-
-            <p className="mt-6 text-gray-400">
-              Traditional classroom models struggle to adapt to
-              diverse student capabilities. As a result,
-              learning gaps widen and ROI on public spending
-              remains suboptimal.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-cyan-400/30 via-transparent to-cyan-400/20"
-          >
-            <div className="relative bg-[#0b1722]/95 backdrop-blur-xl rounded-2xl p-10 border border-cyan-400/20">
-
-              <h3 className="text-2xl font-semibold text-cyan-400 mb-6">
-                NEP 2020 Vision
-              </h3>
-
-              <p className="text-gray-300 leading-relaxed">
-                Building a flexible, multidisciplinary,
-                technology-enabled education ecosystem
-                that prepares India for the knowledge economy.
-              </p>
-
-            </div>
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* ================= AI SOLUTION ================= */}
-      <section className="relative py-32">
-        <div className="absolute inset-0 bg-[#050d14]/95" />
 
         <div className="relative w-11/12 md:w-5/6 mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center text-4xl md:text-5xl font-bold text-white mb-16"
+            className="text-4xl md:text-5xl font-bold text-white mb-14"
           >
-            AI-Powered <span className="text-cyan-400">Transformation</span>
+            Towards a <span className="text-cyan-400">Healthy Tomorrow</span>
           </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-10">
 
             {[
               {
-                icon: Brain,
-                title: "Adaptive Learning",
-                desc: "AI models personalize curriculum in real time based on student performance, improving comprehension and retention.",
-              },
-              {
-                icon: GraduationCap,
-                title: "Teacher Augmentation",
-                desc: "AI assists teachers with automated assessments, content generation, and real-time analytics.",
+                icon: HeartPulse,
+                title: "Predictive Healthcare",
+                desc: "AI-driven diagnostics and early disease prediction reduce burden on public hospitals and improve preventive care.",
               },
               {
                 icon: BarChart3,
-                title: "Outcome Analytics",
-                desc: "Policy-makers receive measurable dashboards to evaluate ROI and optimize allocation of funds.",
+                title: "Optimized Public Spending",
+                desc: "With 2.5% GDP target on health, AI ensures efficient allocation, minimizing leakages and maximizing outcomes.",
+              },
+              {
+                icon: Shield,
+                title: "Smart Health Infrastructure",
+                desc: "Data-integrated hospitals, telemedicine networks, and rural AI support systems ensure universal accessibility.",
               },
             ].map((item, i) => (
               <motion.div
@@ -154,7 +91,7 @@ export default function EducationPage() {
                     {item.title}
                   </h3>
 
-                  <p className="text-gray-300 leading-relaxed text-[15.5px]">
+                  <p className="text-gray-300 text-[15.5px] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -165,42 +102,123 @@ export default function EducationPage() {
         </div>
       </section>
 
-      {/* ================= EDUCATION AS INDUSTRY ================= */}
+      {/* ================= EDUCATION SECTION ================= */}
       <section className="relative py-28">
-        <div className="absolute inset-0 bg-[#07121c]/95" />
+        <div className="absolute inset-0 bg-[#050d14]/95" />
 
-        <div className="relative w-11/12 md:w-4/6 mx-auto text-center">
+        <div className="relative w-11/12 md:w-5/6 mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-4xl font-bold text-white mb-10"
+            className="text-4xl md:text-5xl font-bold text-white mb-14"
           >
-            Education as a
-            <span className="text-cyan-400"> Strategic Industry</span>
+            Education as a <span className="text-cyan-400">Growth Engine</span>
           </motion.h2>
 
-          <p className="text-gray-300 text-lg leading-relaxed">
-            With structured AI deployment, education can evolve
-            into a high-impact national industry — generating
-            skilled human capital, improving productivity,
-            and accelerating economic growth.
-          </p>
+          <div className="grid md:grid-cols-3 gap-10">
 
-          <p className="mt-6 text-gray-400">
-            The ROI of AI investment in education is humongous.
-            Adaptive models disrupt traditional pedagogy and
-            create multiplier effects across employment,
-            innovation, and social mobility.
-          </p>
+            {[
+              {
+                icon: GraduationCap,
+                title: "Adaptive Learning Models",
+                desc: "AI personalizes content delivery, bridging learning gaps and improving retention across demographics.",
+              },
+              {
+                icon: Brain,
+                title: "Teacher Augmentation",
+                desc: "Automated assessments and analytics free educators to focus on mentorship and critical thinking.",
+              },
+              {
+                icon: BarChart3,
+                title: "High ROI Investment",
+                desc: "With 6% GDP allocation target, AI ensures measurable outcomes and multiplier economic impact.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-cyan-400/30 via-transparent to-cyan-400/20 hover:from-cyan-400/60 hover:to-cyan-400/40 transition duration-500"
+              >
+                <div className="relative bg-[#0b1722]/95 backdrop-blur-xl rounded-2xl p-8 border border-cyan-400/10 group-hover:border-cyan-400/40 transition duration-500 text-center">
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="mt-12 px-10 py-4 bg-cyan-400 text-black font-semibold rounded-full hover:bg-cyan-300 transition duration-300 shadow-lg shadow-cyan-400/20"
+                  <item.icon className="w-10 h-10 text-cyan-400 mx-auto mb-5" />
+
+                  <h3 className="text-xl font-semibold text-cyan-400 mb-4">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-300 text-[15.5px] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* ================= TRANSPORT SECTION ================= */}
+      <section className="relative py-28">
+        <div className="absolute inset-0 bg-[#07121c]/95" />
+
+        <div className="relative w-11/12 md:w-5/6 mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-white mb-14"
           >
-            Build the Future Workforce
-          </motion.button>
+            Intelligent <span className="text-cyan-400">Transport Systems</span>
+          </motion.h2>
+
+          <div className="grid md:grid-cols-3 gap-10">
+
+            {[
+              {
+                icon: Bus,
+                title: "AI Traffic Optimization",
+                desc: "Smart traffic signals and predictive congestion systems reduce urban travel time and fuel consumption.",
+              },
+              {
+                icon: Shield,
+                title: "Road Safety Analytics",
+                desc: "Computer vision detects violations, accident hotspots, and improves emergency response systems.",
+              },
+              {
+                icon: Cpu,
+                title: "Smart Infrastructure",
+                desc: "IoT-enabled highways and public transport systems integrated with AI for real-time efficiency.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="group relative rounded-2xl p-[1px] bg-gradient-to-br from-cyan-400/30 via-transparent to-cyan-400/20 hover:from-cyan-400/60 hover:to-cyan-400/40 transition duration-500"
+              >
+                <div className="relative bg-[#0b1722]/95 backdrop-blur-xl rounded-2xl p-8 border border-cyan-400/10 group-hover:border-cyan-400/40 transition duration-500 text-center">
+
+                  <item.icon className="w-10 h-10 text-cyan-400 mx-auto mb-5" />
+
+                  <h3 className="text-xl font-semibold text-cyan-400 mb-4">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-300 text-[15.5px] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+
+          </div>
         </div>
       </section>
     </div>

@@ -10,7 +10,8 @@ import logo from "../public/assets/banner.jpeg";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const pathname = usePathname();
 
@@ -20,26 +21,25 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const setSolutionsOpen = (value: string | null) => {
+    setDropdownOpen(value);
+  };
+
   return (
     <>
       {/* MAIN NAVBAR */}
       <header
-        className={`fixed left-0 w-full z-50 transition-all duration-500 ${
-          scrolled
+        className={`fixed left-0 w-full z-50 transition-all duration-500 ${scrolled
             ? "bg-black/70 backdrop-blur-xl border-b border-cyan-400/20 shadow-lg"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <nav className="relative w-11/12 mx-auto flex items-center justify-between py-5">
 
           {/* LOGO */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image src={logo} alt="Logo" width={45} height={45} />
-            <span
-              className={`font-bold text-xl transition-all duration-300 ${
-                scrolled ? "text-white" : "text-white"
-              }`}
-            >
+            <span className="font-bold text-xl text-white">
               Shannom
               <span className="text-cyan-400 group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] transition">
                 .ai
@@ -48,53 +48,105 @@ export default function Navbar() {
           </Link>
 
           {/* CENTER MENU */}
-          <ul
-            className={`hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-10 font-medium text-white`}
-          >
-            {[
-              { name: "Home", link: "/" },
-              { name: "About", link: "/about" },
-              { name: "Industries", link: "/industries" },
-            ].map((item) => (
-              <li key={item.name} className="relative group">
+          <ul className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-10 font-medium text-white">
+
+            {/* Home */}
+            <li className="relative group">
+              <Link
+                href="/"
+                className={`transition ${pathname === "/" ? "text-cyan-400" : "hover:text-cyan-400"
+                  }`}
+              >
+                Home
+              </Link>
+            </li>
+
+            {/* About */}
+            <li className="relative group">
+              <Link
+                href="/about"
+                className={`transition ${pathname === "/about"
+                    ? "text-cyan-400"
+                    : "hover:text-cyan-400"
+                  }`}
+              >
+                About
+              </Link>
+            </li>
+
+            {/* INDUSTRIES DROPDOWN */}
+            {/* INDUSTRIES DROPDOWN */}
+            <li
+              className="relative group"
+              onMouseEnter={() => setSolutionsOpen("industries")}
+              onMouseLeave={() => setSolutionsOpen(null)}
+            >
+              <div className="flex items-center gap-1">
+
+                {/* Clickable Text */}
                 <Link
-                  href={item.link}
-                  className={`transition duration-300 ${
-                    pathname === item.link
+                  href="/industries"
+                  className={`transition duration-300 ${pathname === "/industries"
                       ? "text-cyan-400"
                       : "hover:text-cyan-400"
-                  }`}
+                    }`}
                 >
-                  {item.name}
+                  Industries
                 </Link>
 
-                {/* Animated underline */}
-                <span
-                  className={`absolute left-0 -bottom-1 h-[2px] bg-cyan-400 transition-all duration-300 ${
-                    pathname === item.link
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
+                {/* Arrow Toggle */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSolutionsOpen(
+                      dropdownOpen === "industries" ? null : "industries"
+                    );
+                  }}
+                  className="hover:text-cyan-400 transition"
+                >
+                  <ChevronDown size={16} />
+                </button>
+              </div>
+
+              <div
+                className={`absolute top-full left-0 mt-4 w-72 bg-black/90 backdrop-blur-xl border border-cyan-400/20 rounded-xl shadow-xl transition-all duration-300 ${dropdownOpen === "industries"
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-3"
                   }`}
-                />
-              </li>
-            ))}
+              >
+                {[
+                  { name: "Education", link: "/industries/education" },
+                  { name: "Healthcare", link: "/industries/health" },
+                  { name: "Transport", link: "/industries/transport" },
+                  { name: "Agriculture", link: "/industries/agriculture" },
+                ].map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.link}
+                    className="block px-6 py-3 text-white hover:bg-cyan-400/10 hover:text-cyan-400 transition"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </li>
+
 
             {/* SOLUTIONS DROPDOWN */}
             <li
               className="relative group"
-              onMouseEnter={() => setSolutionsOpen(true)}
-              onMouseLeave={() => setSolutionsOpen(false)}
+              onMouseEnter={() => setDropdownOpen("solutions")}
+              onMouseLeave={() => setDropdownOpen(null)}
             >
               <button className="flex items-center gap-1 hover:text-cyan-400 transition">
                 Solutions <ChevronDown size={16} />
               </button>
 
               <div
-                className={`absolute top-full left-0 mt-4 w-72 bg-black/90 backdrop-blur-xl border border-cyan-400/20 rounded-xl shadow-xl transition-all duration-300 ${
-                  solutionsOpen
+                className={`absolute top-full left-0 mt-4 w-72 bg-black/90 backdrop-blur-xl border border-cyan-400/20 rounded-xl shadow-xl transition-all duration-300 ${dropdownOpen === "solutions"
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-3"
-                }`}
+                  }`}
               >
                 {[
                   "AI for Healthcare",
@@ -114,30 +166,31 @@ export default function Navbar() {
               </div>
             </li>
 
-            {[
-              { name: "Projects", link: "/projects" },
-              { name: "Contact", link: "/contact" },
-            ].map((item) => (
-              <li key={item.name} className="relative group">
-                <Link
-                  href={item.link}
-                  className={`transition ${
-                    pathname === item.link
-                      ? "text-cyan-400"
-                      : "hover:text-cyan-400"
+            {/* Projects */}
+            <li>
+              <Link
+                href="/projects"
+                className={`transition ${pathname === "/projects"
+                    ? "text-cyan-400"
+                    : "hover:text-cyan-400"
                   }`}
-                >
-                  {item.name}
-                </Link>
-                <span
-                  className={`absolute left-0 -bottom-1 h-[2px] bg-cyan-400 transition-all duration-300 ${
-                    pathname === item.link
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
+              >
+                Projects
+              </Link>
+            </li>
+
+            {/* Contact */}
+            <li>
+              <Link
+                href="/contact"
+                className={`transition ${pathname === "/contact"
+                    ? "text-cyan-400"
+                    : "hover:text-cyan-400"
                   }`}
-                />
-              </li>
-            ))}
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
 
           {/* CTA BUTTON */}
@@ -163,22 +216,16 @@ export default function Navbar() {
       </header>
 
       {/* MOBILE SIDEBAR */}
-      <div
-        className={`fixed inset-0 z-50 transition ${
-          open ? "visible" : "invisible"
-        }`}
-      >
+      <div className={`fixed inset-0 z-50 transition ${open ? "visible" : "invisible"}`}>
         <div
           onClick={() => setOpen(false)}
-          className={`absolute inset-0 bg-black/70 backdrop-blur-md transition-opacity ${
-            open ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 bg-black/70 backdrop-blur-md transition-opacity ${open ? "opacity-100" : "opacity-0"
+            }`}
         />
 
         <aside
-          className={`absolute right-0 top-0 h-full w-80 bg-black text-white border-l border-cyan-400/20 transform transition-transform duration-300 ${
-            open ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`absolute right-0 top-0 h-full w-80 bg-black text-white border-l border-cyan-400/20 transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           <button
             onClick={() => setOpen(false)}
@@ -191,30 +238,32 @@ export default function Navbar() {
             <Link href="/" onClick={() => setOpen(false)} className="hover:text-cyan-400">
               Home
             </Link>
+
             <Link href="/about" onClick={() => setOpen(false)} className="hover:text-cyan-400">
               About
             </Link>
-            <Link href="/industries" onClick={() => setOpen(false)} className="hover:text-cyan-400">
-              Industries
-            </Link>
 
+            {/* MOBILE INDUSTRIES */}
             <button
-              onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
               className="flex items-center justify-between hover:text-cyan-400"
             >
-              Solutions <ChevronDown size={18} />
+              Industries <ChevronDown size={18} />
             </button>
 
-            {mobileSolutionsOpen && (
+            {mobileIndustriesOpen && (
               <div className="ml-4 flex flex-col gap-4 text-base text-gray-400">
-                <Link href="/solutions" onClick={() => setOpen(false)}>
-                  AI for Healthcare
+                <Link href="/industries/education" onClick={() => setOpen(false)}>
+                  Education
                 </Link>
-                <Link href="/solutions" onClick={() => setOpen(false)}>
-                  AI for Smart Cities
+                <Link href="/industries/health" onClick={() => setOpen(false)}>
+                  Healthcare
                 </Link>
-                <Link href="/solutions" onClick={() => setOpen(false)}>
-                  AI for Education
+                <Link href="/industries/transport" onClick={() => setOpen(false)}>
+                  Transport
+                </Link>
+                <Link href="/industries/agriculture" onClick={() => setOpen(false)}>
+                  Agriculture
                 </Link>
               </div>
             )}
@@ -222,6 +271,7 @@ export default function Navbar() {
             <Link href="/projects" onClick={() => setOpen(false)} className="hover:text-cyan-400">
               Projects
             </Link>
+
             <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-cyan-400">
               Contact
             </Link>

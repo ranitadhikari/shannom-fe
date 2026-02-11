@@ -90,7 +90,7 @@ export default function HeroSection() {
         />
 
         {/* Strong AI Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-[#001f2f]/95 backdrop-blur-md" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-[#001f2f]/95 backdrop-blur-[2px]" />
       </div>
 
       {/* Content */}

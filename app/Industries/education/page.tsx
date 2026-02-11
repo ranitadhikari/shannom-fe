@@ -9,12 +9,12 @@ export default function EducationPage() {
       className="overflow-hidden bg-fixed bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1581091870627-3f89f45b7d52?auto=format&fit=crop&w=1920&q=80')",
+          "url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80')",
       }}
     >
       {/* ================= HERO SECTION ================= */}
       <section className="relative min-h-[95vh] flex items-center">
-        <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px]" />
 
         <div className="relative w-11/12 md:w-5/6 mx-auto">
           <motion.h1

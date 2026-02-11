@@ -14,7 +14,7 @@ export default function AboutPage() {
     >
       {/* ================= HERO SECTION ================= */}
       <section className="relative min-h-[95vh] flex items-center">
-        <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px]" />
 
         <div className="relative w-11/12 md:w-5/6 mx-auto">
           <motion.h1
