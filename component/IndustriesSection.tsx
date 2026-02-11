@@ -14,26 +14,37 @@ const industries = [
     icon: GraduationCap,
     title: "AI for Education",
     desc: "Adaptive learning intelligence and predictive academic analytics enabling institutions to deliver measurable performance outcomes.",
+    link: "/Industries/education"
   },
   {
     icon: HeartPulse,
     title: "AI for Healthcare",
     desc: "Clinical decision systems, patient risk modeling, and operational automation enhancing quality of care.",
+    link: "/Industries/health"
   },
   {
     icon: Bus,
     title: "AI for Transportation",
     desc: "Real-time mobility intelligence and predictive traffic optimization for next-generation infrastructure.",
+    link: "/Industries/transport"
+  },
+  {
+    icon: ShieldCheck,
+    title: "AI for Agriculture",
+    desc: "Predictive soil health models and subsidy integrity systems protecting farmer livelihoods.",
+    link: "/Industries/agriculture"
   },
   {
     icon: Building2,
     title: "AI for Smart Cities",
     desc: "Connected urban AI frameworks powering energy optimization and intelligent civic systems.",
+    link: "/solutions/smart-cities"
   },
   {
     icon: ShieldCheck,
     title: "AI for Governance",
     desc: "Policy intelligence and compliance automation supporting transparent, data-driven public administration.",
+    link: "/solutions/digital-india"
   },
 ];
 
@@ -103,7 +114,7 @@ export default function IndustriesSection() {
                   </p>
 
                   <Link
-                    href="/solutions"
+                    href={item.link}
                     className="inline-block mt-6 text-cyan-400 text-sm font-medium hover:text-cyan-300 transition"
                   >
                     Explore Solution →

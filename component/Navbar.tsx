@@ -86,8 +86,8 @@ export default function Navbar() {
 
                 {/* Clickable Text */}
                 <Link
-                  href="/industries"
-                  className={`transition duration-300 ${pathname === "/industries"
+                  href="/Industries"
+                  className={`transition duration-300 ${pathname === "/Industries"
                       ? "text-cyan-400"
                       : "hover:text-cyan-400"
                     }`}
@@ -116,10 +116,10 @@ export default function Navbar() {
                   }`}
               >
                 {[
-                  { name: "Education", link: "/industries/education" },
-                  { name: "Healthcare", link: "/industries/health" },
-                  { name: "Transport", link: "/industries/transport" },
-                  { name: "Agriculture", link: "/industries/agriculture" },
+                  { name: "Education", link: "/Industries/education" },
+                  { name: "Healthcare", link: "/Industries/health" },
+                  { name: "Transport", link: "/Industries/transport" },
+                  { name: "Agriculture", link: "/Industries/agriculture" },
                 ].map((item, index) => (
                   <Link
                     key={index}
@@ -150,18 +150,18 @@ export default function Navbar() {
                   }`}
               >
                 {[
-                  "AI for Healthcare",
-                  "AI for Smart Cities",
-                  "AI for Transport",
-                  "AI for Education",
-                  "Responsible AI",
+                  { name: "Fertilizer Subsidy Integrity", link: "/solutions/fertilizer-subsidy" },
+                  { name: "Digital India Enhancement", link: "/solutions/digital-india" },
+                  { name: "Public Safety & Security", link: "/solutions/public-safety" },
+                  { name: "Healthcare Transformation", link: "/solutions/healthcare" },
+                  { name: "Smart Cities & Urban Planning", link: "/solutions/smart-cities" },
                 ].map((item, index) => (
                   <Link
                     key={index}
-                    href="/solutions"
+                    href={item.link}
                     className="block px-6 py-3 text-white hover:bg-cyan-400/10 hover:text-cyan-400 transition"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 ))}
               </div>
@@ -254,16 +254,16 @@ export default function Navbar() {
 
             {mobileIndustriesOpen && (
               <div className="ml-4 flex flex-col gap-4 text-base text-gray-400">
-                <Link href="/industries/education" onClick={() => setOpen(false)}>
+                <Link href="/Industries/education" onClick={() => setOpen(false)}>
                   Education
                 </Link>
-                <Link href="/industries/health" onClick={() => setOpen(false)}>
+                <Link href="/Industries/health" onClick={() => setOpen(false)}>
                   Healthcare
                 </Link>
-                <Link href="/industries/transport" onClick={() => setOpen(false)}>
+                <Link href="/Industries/transport" onClick={() => setOpen(false)}>
                   Transport
                 </Link>
-                <Link href="/industries/agriculture" onClick={() => setOpen(false)}>
+                <Link href="/Industries/agriculture" onClick={() => setOpen(false)}>
                   Agriculture
                 </Link>
               </div>

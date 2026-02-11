@@ -12,7 +12,7 @@ const slides = [
     tag: "Policy + Technology",
     title: "Data That Powers\nSmarter Nations",
     desc: "Transforming governance frameworks into intelligent, adaptive systems built for national scale.",
-    button1: { text: "Explore Industries", link: "/industries" },
+    button1: { text: "Explore Industries", link: "/Industries" },
     button2: { text: "Our Vision", link: "/about" },
   },
   {
@@ -21,7 +21,7 @@ const slides = [
     tag: "Secure AI Infrastructure",
     title: "Trust. Scale.\nDigital Sovereignty.",
     desc: "AI engineered with compliance, transparency, and long-term institutional resilience at its core.",
-    button1: { text: "Government Use Cases", link: "/services" },
+    button1: { text: "Government Use Cases", link: "/solutions/digital-india" },
     button2: { text: "Learn More", link: "/contact" },
   },
   {
@@ -30,7 +30,7 @@ const slides = [
     tag: "Future Systems",
     title: "Redefining Public\nDigital Infrastructure",
     desc: "Building intelligent systems that connect citizens, institutions, and innovation ecosystems.",
-    button1: { text: "View Projects", link: "/services" },
+    button1: { text: "View Projects", link: "/solutions/fertilizer-subsidy" },
     button2: { text: "Connect With Us", link: "/contact" },
   },
   {
