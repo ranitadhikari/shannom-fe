@@ -17,6 +17,7 @@ export default function IndustriesPage() {
         <div className="absolute inset-0 bg-black/75 backdrop-blur-50" />
 
         <div className="relative w-11/12 md:w-5/6 mx-auto">
+        
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
