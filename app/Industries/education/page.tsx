@@ -9,7 +9,7 @@ export default function EducationPage() {
       className="overflow-hidden bg-fixed bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80')",
+          "url('https://images.unsplash.com/photo-1581091870627-3f89f45b7d52?auto=format&fit=crop&w=1920&q=80')",
       }}
     >
       {/* ================= HERO SECTION ================= */}
