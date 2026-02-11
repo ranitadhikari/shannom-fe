@@ -167,16 +167,16 @@ export default function Navbar() {
               </div>
             </li>
 
-            {/* Projects */}
+            {/* Vision */}
             <li>
               <Link
-                href="/projects"
-                className={`transition ${pathname === "/projects"
+                href="/vision"
+                className={`transition ${pathname === "/vision"
                     ? "text-cyan-400"
                     : "hover:text-cyan-400"
                   }`}
               >
-                Projects
+                Vision
               </Link>
             </li>
 
@@ -269,8 +269,8 @@ export default function Navbar() {
               </div>
             )}
 
-            <Link href="/projects" onClick={() => setOpen(false)} className="hover:text-cyan-400">
-              Projects
+            <Link href="/vision" onClick={() => setOpen(false)} className="hover:text-cyan-400">
+              Vision
             </Link>
 
             <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-cyan-400">
