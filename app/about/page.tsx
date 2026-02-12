@@ -176,7 +176,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="text-center text-4xl font-bold text-white mb-14"
+            className="text-center text-4xl font-bold text-white mb-14 whitespace-nowrap"
           >
             Our <span className="text-cyan-400">Core Values</span>
           </motion.h2>

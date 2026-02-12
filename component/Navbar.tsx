@@ -14,6 +14,7 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileCoreValuesOpen, setMobileCoreValuesOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -167,6 +168,38 @@ export default function Navbar() {
               </div>
             </li>
 
+            {/* CORE VALUES DROPDOWN */}
+            <li
+              className="relative group"
+              onMouseEnter={() => setDropdownOpen("core-values")}
+              onMouseLeave={() => setDropdownOpen(null)}
+            >
+              <button className="flex items-center gap-1 hover:text-cyan-400 transition whitespace-nowrap">
+                Core Values <ChevronDown size={16} />
+              </button>
+
+              <div
+                className={`absolute top-full left-0 mt-4 w-72 bg-black/90 backdrop-blur-xl border border-cyan-400/20 rounded-xl shadow-xl transition-all duration-300 ${dropdownOpen === "core-values"
+                    ? "opacity-100 visible translate-y-0"
+                    : "opacity-0 invisible -translate-y-3"
+                  }`}
+              >
+                {[
+                  { name: "Social Impact", link: "/core-values/social-impact" },
+                  { name: "DEI", link: "/core-values/dei" },
+                  { name: "Env sustainability", link: "/core-values/env-sustainability" },
+                ].map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.link}
+                    className="block px-6 py-3 text-white hover:bg-cyan-400/10 hover:text-cyan-400 transition"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </li>
+
             {/* Vision */}
             <li>
               <Link
@@ -265,6 +298,56 @@ export default function Navbar() {
                 </Link>
                 <Link href="/Industries/agriculture" onClick={() => setOpen(false)}>
                   Agriculture
+                </Link>
+              </div>
+            )}
+
+            {/* MOBILE SOLUTIONS */}
+            <button
+              onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+              className="flex items-center justify-between hover:text-cyan-400"
+            >
+              Solutions <ChevronDown size={18} />
+            </button>
+
+            {mobileSolutionsOpen && (
+              <div className="ml-4 flex flex-col gap-4 text-base text-gray-400">
+                <Link href="/solutions/fertilizer-subsidy" onClick={() => setOpen(false)}>
+                  Fertilizer Subsidy Integrity
+                </Link>
+                <Link href="/solutions/digital-india" onClick={() => setOpen(false)}>
+                  Digital India Enhancement
+                </Link>
+                <Link href="/solutions/public-safety" onClick={() => setOpen(false)}>
+                  Public Safety & Security
+                </Link>
+                <Link href="/solutions/healthcare" onClick={() => setOpen(false)}>
+                  Healthcare Transformation
+                </Link>
+                <Link href="/solutions/smart-cities" onClick={() => setOpen(false)}>
+                  Smart Cities & Urban Planning
+                </Link>
+              </div>
+            )}
+
+            {/* MOBILE CORE VALUES */}
+            <button
+              onClick={() => setMobileCoreValuesOpen(!mobileCoreValuesOpen)}
+              className="flex items-center justify-between hover:text-cyan-400 whitespace-nowrap"
+            >
+              Core Values <ChevronDown size={18} />
+            </button>
+
+            {mobileCoreValuesOpen && (
+              <div className="ml-4 flex flex-col gap-4 text-base text-gray-400">
+                <Link href="/core-values/social-impact" onClick={() => setOpen(false)}>
+                  Social Impact
+                </Link>
+                <Link href="/core-values/dei" onClick={() => setOpen(false)}>
+                  DEI
+                </Link>
+                <Link href="/core-values/env-sustainability" onClick={() => setOpen(false)}>
+                  Env sustainability
                 </Link>
               </div>
             )}
