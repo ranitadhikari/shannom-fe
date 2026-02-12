@@ -80,7 +80,7 @@ export default function VisionPage() {
               className="relative aspect-video rounded-3xl overflow-hidden border border-white/10"
             >
               <img 
-                src="https://img.trae.ai/2911b330-f273-4556-9917-81a17937409f.png" 
+                src="https://res.cloudinary.com/dwserksvu/image/upload/v1770924721/262210ec-aa0a-451a-80e2-e1dee20f31ec_mqaxo6.jpg" 
                 alt="AI for Public Good" 
                 className="w-full h-full object-cover"
               />
@@ -97,7 +97,7 @@ export default function VisionPage() {
               className="order-2 md:order-1 relative aspect-video rounded-3xl overflow-hidden border border-white/10"
             >
               <img 
-                src="https://img.trae.ai/94d4d16d-3112-4752-959c-6a7822941589.png" 
+                src="https://res.cloudinary.com/dwserksvu/image/upload/v1770924964/fei-fei-li-thumbnail-image_i2miow.jpg" 
                 alt="Human-Centric AI" 
                 className="w-full h-full object-cover"
               />
@@ -207,7 +207,7 @@ export default function VisionPage() {
               className="relative aspect-video rounded-3xl overflow-hidden border border-white/10"
             >
               <img 
-                src="https://img.trae.ai/26a9787e-e5d4-4a00-9852-c322d765896b.png" 
+                src="https://res.cloudinary.com/dwserksvu/image/upload/v1770925260/innovation-cover_tzblee.jpg" 
                 alt="Innovation with Purpose" 
                 className="w-full h-full object-cover"
               />
