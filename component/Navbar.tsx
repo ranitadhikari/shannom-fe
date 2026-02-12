@@ -88,7 +88,7 @@ export default function Navbar() {
                 {/* Clickable Text */}
                 <Link
                   href="/Industries"
-                  className={`transition duration-300 ${pathname === "/Industries"
+                  className={`transition duration-300 whitespace-nowrap ${pathname === "/Industries"
                       ? "text-cyan-400"
                       : "hover:text-cyan-400"
                     }`}
@@ -140,7 +140,7 @@ export default function Navbar() {
               onMouseEnter={() => setDropdownOpen("solutions")}
               onMouseLeave={() => setDropdownOpen(null)}
             >
-              <button className="flex items-center gap-1 hover:text-cyan-400 transition">
+              <button className="flex items-center gap-1 hover:text-cyan-400 transition whitespace-nowrap">
                 Solutions <ChevronDown size={16} />
               </button>
 
@@ -187,7 +187,7 @@ export default function Navbar() {
                 {[
                   { name: "Social Impact", link: "/core-values/social-impact" },
                   { name: "DEI", link: "/core-values/dei" },
-                  { name: "Env sustainability", link: "/core-values/env-sustainability" },
+                  { name: "Envoirment sustainability", link: "/core-values/env-sustainability" },
                 ].map((item, index) => (
                   <Link
                     key={index}
@@ -280,7 +280,7 @@ export default function Navbar() {
             {/* MOBILE INDUSTRIES */}
             <button
               onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
-              className="flex items-center justify-between hover:text-cyan-400"
+              className="flex items-center justify-between hover:text-cyan-400 whitespace-nowrap"
             >
               Industries <ChevronDown size={18} />
             </button>
@@ -305,7 +305,7 @@ export default function Navbar() {
             {/* MOBILE SOLUTIONS */}
             <button
               onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-              className="flex items-center justify-between hover:text-cyan-400"
+              className="flex items-center justify-between hover:text-cyan-400 whitespace-nowrap"
             >
               Solutions <ChevronDown size={18} />
             </button>
