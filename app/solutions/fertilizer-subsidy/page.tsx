@@ -38,7 +38,7 @@ export default function FertilizerSubsidyPage() {
             >
               <h2 className="text-3xl font-bold mb-6">Executive Summary</h2>
               <p className="text-gray-400 text-lg leading-relaxed">
-                India's fertilizer subsidy program is a lifeline for millions of farmers. However, the system faces significant challenges including diversion for industrial use, cross-border smuggling, and "ghost" beneficiaries. Shannom's AI-driven solution provides a multi-layered detection architecture that strengthens the integrity of the entire supply chain.
+                India&apos;s fertilizer subsidy program is a lifeline for millions of farmers. However, the system faces significant challenges including diversion for industrial use, cross-border smuggling, and &quot;ghost&quot; beneficiaries. Shannom&apos;s AI-driven solution provides a multi-layered detection architecture that strengthens the integrity of the entire supply chain.
               </p>
             </motion.div>
             <div className="grid grid-cols-2 gap-6">
@@ -76,7 +76,7 @@ export default function FertilizerSubsidyPage() {
               },
               {
                 title: "Transaction Fraud",
-                desc: "Aadhaar-based authentication bypasses and 'ghost' transactions at the retail point of sale.",
+                desc: "Aadhaar-based authentication bypasses and &apos;ghost&apos; transactions at the retail point of sale.",
                 icon: Lock
               }
             ].map((item, i) => (
@@ -107,7 +107,7 @@ export default function FertilizerSubsidyPage() {
               },
               {
                 layer: "Layer 2: Real-time Anomaly Detection",
-                content: "ML models monitor POS transactions in real-time, identifying patterns indicative of 'ghost' buying or batch sales to industrial middlemen.",
+                content: "ML models monitor POS transactions in real-time, identifying patterns indicative of &apos;ghost&apos; buying or batch sales to industrial middlemen.",
                 icon: Zap
               },
               {
@@ -142,14 +142,14 @@ export default function FertilizerSubsidyPage() {
           <h2 className="text-3xl font-bold mb-12">Illustrative <span className="text-cyan-400">Fraud Scenarios</span> We Catch</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              "The 'Midnight Retailer': Bulk POS transactions occurring outside business hours with sequential Aadhaar IDs.",
-              "The 'Dead-End Truck': Transport vehicles departing from warehouses but never reaching their registered retail destination.",
-              "The 'Soil Paradox': High-volume fertilizer sales in regions where soil health records show minimal requirement.",
-              "The 'Ghost Farmer': Multiple small-scale transactions mapped to the same biometric signature across different districts."
+              "The &apos;Midnight Retailer&apos;: Bulk POS transactions occurring outside business hours with sequential Aadhaar IDs.",
+              "The &apos;Dead-End Truck&apos;: Transport vehicles departing from warehouses but never reaching their registered retail destination.",
+              "The &apos;Soil Paradox&apos;: High-volume fertilizer sales in regions where soil health records show minimal requirement.",
+              "The &apos;Ghost Farmer&apos;: Multiple small-scale transactions mapped to the same biometric signature across different districts."
             ].map((scenario, i) => (
               <div key={i} className="flex gap-4 p-6 bg-white/5 rounded-xl border-l-4 border-cyan-400">
                 <CheckCircle2 className="text-cyan-400 shrink-0" size={24} />
-                <p className="text-gray-300 italic">"{scenario}"</p>
+                <p className="text-gray-300 italic">&quot;{scenario}&quot;</p>
               </div>
             ))}
           </div>
@@ -183,7 +183,7 @@ export default function FertilizerSubsidyPage() {
         <div className="w-11/12 md:w-5/6 mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 text-white">Ready to Secure Your Subsidy Ecosystem?</h2>
           <p className="text-gray-400 mb-12 max-w-2xl mx-auto text-lg">
-            Connect with our experts to discuss how Shannom's AI can be tailored to your administrative challenges.
+            Connect with our experts to discuss how Shannom&apos;s AI can be tailored to your administrative challenges.
           </p>
           <button className="px-10 py-5 bg-cyan-400 text-black font-bold rounded-full hover:bg-cyan-300 transition transform hover:scale-105 shadow-xl shadow-cyan-400/20">
             Request a Technical Briefinging

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Leaf, Droplets, LineChart, ShieldCheck, Sprout, Tractor } from "lucide-react";
+import Image from "next/image";
 
 export default function AgricultureIndustryPage() {
   return (
@@ -104,10 +105,11 @@ export default function AgricultureIndustryPage() {
             </div>
           </motion.div>
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10">
-            <img 
+            <Image 
               src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" 
               alt="AI in Agriculture" 
-              className="object-cover w-full h-full opacity-60"
+              fill
+              className="object-cover opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           </div>

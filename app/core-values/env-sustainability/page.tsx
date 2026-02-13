@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Leaf, Wind, Sun, Zap } from "lucide-react";
+import { Leaf, Wind, Zap } from "lucide-react";
 import Image from "next/image";
 
 export default function SustainabilityPage() {
@@ -51,7 +51,7 @@ export default function SustainabilityPage() {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl text-gray-300 italic leading-relaxed max-w-5xl mx-auto"
           >
-            "Harnessing AI to protect our planet for future generations."
+            &quot;Harnessing AI to protect our planet for future generations.&quot;
           </motion.p>
         </div>
       </section>

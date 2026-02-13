@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Shield, Eye, Bell, Lock, Users, Map } from "lucide-react";
+import Image from "next/image";
 
 export default function PublicSafetyPage() {
   return (
@@ -61,7 +62,7 @@ export default function PublicSafetyPage() {
             </div>
           </motion.div>
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10">
-            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="Public Safety AI" className="object-cover w-full h-full opacity-60" />
+            <Image src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="Public Safety AI" fill className="object-cover opacity-60" />
           </div>
         </div>
       </section>

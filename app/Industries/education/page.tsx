@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Brain, GraduationCap, BarChart3, Cpu } from "lucide-react";
+import { Brain, GraduationCap, BarChart3 } from "lucide-react";
 
 export default function EducationPage() {
   return (

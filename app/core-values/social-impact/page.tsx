@@ -65,7 +65,7 @@ export default function SocialImpactPage() {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl text-gray-300 italic leading-relaxed max-w-5xl mx-auto"
           >
-            "We believe that AI, when deployed with purpose and governance, can become one of the most powerful tools for social transformation."
+            &quot;We believe that AI, when deployed with purpose and governance, can become one of the most powerful tools for social transformation.&quot;
           </motion.p>
         </div>
       </section>

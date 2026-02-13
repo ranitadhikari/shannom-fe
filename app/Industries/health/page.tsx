@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Activity, Heart, Shield, Users, Database, Globe } from "lucide-react";
+import Image from "next/image";
 
 export default function HealthcareIndustryPage() {
   return (
@@ -41,7 +42,7 @@ export default function HealthcareIndustryPage() {
       <section className="py-24 bg-[#050505]">
         <div className="w-11/12 md:w-5/6 mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 order-2 md:order-1">
-            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Healthcare AI" className="object-cover w-full h-full opacity-60" />
+            <Image src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Healthcare AI" fill className="object-cover opacity-60" />
           </div>
           <motion.div className="order-1 md:order-2">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Building <span className="text-cyan-400">Digital Health Assets</span></h2>

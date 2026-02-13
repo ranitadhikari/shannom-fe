@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Activity, ShieldCheck, Database, HeartPulse, Microscope, ClipboardList } from "lucide-react";
+import Image from "next/image";
 
 export default function HealthcareSolutionPage() {
   return (
@@ -61,7 +62,7 @@ export default function HealthcareSolutionPage() {
             </div>
           </motion.div>
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10">
-            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Health Data AI" className="object-cover w-full h-full opacity-60" />
+            <Image src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="Health Data AI" fill className="object-cover opacity-60" />
           </div>
         </div>
       </section>

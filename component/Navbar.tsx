@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../public/assets/banner.jpeg";
 
 export default function Navbar() {
@@ -50,7 +51,7 @@ export default function Navbar() {
           </Link>
 
           {/* CENTER MENU */}
-          <ul className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-10 font-medium text-white">
+          <ul className="hidden xl:flex absolute left-1/2 -translate-x-1/2 items-center gap-10 font-medium text-white">
 
             {/* Home */}
             <li className="relative group">
@@ -228,7 +229,7 @@ export default function Navbar() {
           </ul>
 
           {/* CTA BUTTON */}
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Link
               href="/contact"
               className="px-6 py-2 rounded-md bg-cyan-400 text-black font-semibold 
@@ -242,7 +243,7 @@ export default function Navbar() {
           {/* MOBILE TOGGLE */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden text-white"
+            className="xl:hidden text-white"
           >
             {open ? <X size={30} /> : <Menu size={30} />}
           </button>
@@ -250,118 +251,183 @@ export default function Navbar() {
       </header>
 
       {/* MOBILE SIDEBAR */}
-      <div className={`fixed inset-0 z-50 transition ${open ? "visible" : "invisible"}`}>
-        <div
-          onClick={() => setOpen(false)}
-          className={`absolute inset-0 bg-black/70 backdrop-blur-md transition-opacity ${open ? "opacity-100" : "opacity-0"
-            }`}
-        />
+      <AnimatePresence>
+        {open && (
+          <div className="fixed inset-0 z-50 overflow-hidden">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
+              className="absolute inset-0 bg-black/70 backdrop-blur-md"
+            />
 
-        <aside
-          className={`absolute right-0 top-0 h-full w-80 bg-black text-white border-l border-cyan-400/20 transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"
-            }`}
-        >
-          <button
-            onClick={() => setOpen(false)}
-            className="absolute top-4 right-4 text-cyan-400"
-          >
-            <X size={26} />
-          </button>
-
-          <nav className="mt-20 px-8 flex flex-col gap-6 text-lg font-medium">
-            <Link href="/" onClick={() => setOpen(false)} className="hover:text-cyan-400">
-              Home
-            </Link>
-
-            <Link href="/about" onClick={() => setOpen(false)} className="hover:text-cyan-400">
-              About
-            </Link>
-
-            {/* MOBILE INDUSTRIES */}
-            <button
-              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
-              className="flex items-center justify-between hover:text-cyan-400 whitespace-nowrap"
+            {/* Sidebar */}
+            <motion.aside
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="absolute right-0 top-0 h-full w-full sm:w-80 bg-black text-white border-l border-cyan-400/20 shadow-2xl"
             >
-              Industries <ChevronDown size={18} />
-            </button>
+              <button
+                onClick={() => setOpen(false)}
+                className="absolute top-4 right-4 text-cyan-400 p-2 hover:bg-white/5 rounded-full transition"
+              >
+                <X size={26} />
+              </button>
 
-            {mobileIndustriesOpen && (
-              <div className="ml-4 flex flex-col gap-4 text-base text-gray-400">
-                <Link href="/Industries/education" onClick={() => setOpen(false)}>
-                  Education
+              <nav className="mt-20 px-8 flex flex-col gap-6 text-lg font-medium overflow-y-auto max-h-[calc(100vh-5rem)]">
+                <Link href="/" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                  Home
                 </Link>
-                <Link href="/Industries/health" onClick={() => setOpen(false)}>
-                  Healthcare
-                </Link>
-                <Link href="/Industries/transport" onClick={() => setOpen(false)}>
-                  Transport
-                </Link>
-                <Link href="/Industries/agriculture" onClick={() => setOpen(false)}>
-                  Agriculture
-                </Link>
-              </div>
-            )}
 
-            {/* MOBILE SOLUTIONS */}
-            <button
-              onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-              className="flex items-center justify-between hover:text-cyan-400 whitespace-nowrap"
-            >
-              Solutions <ChevronDown size={18} />
-            </button>
+                <Link href="/about" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                  About
+                </Link>
 
-            {mobileSolutionsOpen && (
-              <div className="ml-4 flex flex-col gap-4 text-base text-gray-400">
-                <Link href="/solutions/fertilizer-subsidy" onClick={() => setOpen(false)}>
-                  Fertilizer Subsidy Integrity
-                </Link>
-                <Link href="/solutions/digital-india" onClick={() => setOpen(false)}>
-                  Digital India Enhancement
-                </Link>
-                <Link href="/solutions/public-safety" onClick={() => setOpen(false)}>
-                  Public Safety & Security
-                </Link>
-                <Link href="/solutions/healthcare" onClick={() => setOpen(false)}>
-                  Healthcare Transformation
-                </Link>
-                <Link href="/solutions/smart-cities" onClick={() => setOpen(false)}>
-                  Smart Cities & Urban Planning
-                </Link>
-              </div>
-            )}
+                {/* MOBILE INDUSTRIES */}
+                <div>
+                  <button
+                    onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+                    className="flex items-center justify-between w-full hover:text-cyan-400 transition whitespace-nowrap"
+                  >
+                    Industries 
+                    <motion.div
+                      animate={{ rotate: mobileIndustriesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronDown size={18} />
+                    </motion.div>
+                  </button>
 
-            {/* MOBILE CORE VALUES */}
-            <button
-              onClick={() => setMobileCoreValuesOpen(!mobileCoreValuesOpen)}
-              className="flex items-center justify-between hover:text-cyan-400 whitespace-nowrap"
-            >
-              Core Values <ChevronDown size={18} />
-            </button>
+                  <AnimatePresence>
+                    {mobileIndustriesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="ml-4 flex flex-col gap-4 text-base text-gray-400 overflow-hidden"
+                      >
+                        <div className="pt-4 flex flex-col gap-4">
+                          <Link href="/Industries/education" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Education
+                          </Link>
+                          <Link href="/Industries/health" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Healthcare
+                          </Link>
+                          <Link href="/Industries/transport" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Transport
+                          </Link>
+                          <Link href="/Industries/agriculture" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Agriculture
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
-            {mobileCoreValuesOpen && (
-              <div className="ml-4 flex flex-col gap-4 text-base text-gray-400">
-                <Link href="/core-values/social-impact" onClick={() => setOpen(false)}>
-                  Social Impact
-                </Link>
-                <Link href="/core-values/dei" onClick={() => setOpen(false)}>
-                  DEI
-                </Link>
-                <Link href="/core-values/env-sustainability" onClick={() => setOpen(false)}>
-                  Env sustainability
-                </Link>
-              </div>
-            )}
+                {/* MOBILE SOLUTIONS */}
+                <div>
+                  <button
+                    onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
+                    className="flex items-center justify-between w-full hover:text-cyan-400 transition whitespace-nowrap"
+                  >
+                    Solutions 
+                    <motion.div
+                      animate={{ rotate: mobileSolutionsOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronDown size={18} />
+                    </motion.div>
+                  </button>
 
-            <Link href="/vision" onClick={() => setOpen(false)} className="hover:text-cyan-400">
-              Vision
-            </Link>
+                  <AnimatePresence>
+                    {mobileSolutionsOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="ml-4 flex flex-col gap-4 text-base text-gray-400 overflow-hidden"
+                      >
+                        <div className="pt-4 flex flex-col gap-4">
+                          <Link href="/solutions/fertilizer-subsidy" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Fertilizer Subsidy Integrity
+                          </Link>
+                          <Link href="/solutions/digital-india" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Digital India Enhancement
+                          </Link>
+                          <Link href="/solutions/public-safety" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Public Safety & Security
+                          </Link>
+                          <Link href="/solutions/healthcare" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Healthcare Transformation
+                          </Link>
+                          <Link href="/solutions/smart-cities" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Smart Cities & Urban Planning
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
-            <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-cyan-400">
-              Contact
-            </Link>
-          </nav>
-        </aside>
-      </div>
+                {/* MOBILE CORE VALUES */}
+                <div>
+                  <button
+                    onClick={() => setMobileCoreValuesOpen(!mobileCoreValuesOpen)}
+                    className="flex items-center justify-between w-full hover:text-cyan-400 transition whitespace-nowrap"
+                  >
+                    Core Values 
+                    <motion.div
+                      animate={{ rotate: mobileCoreValuesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronDown size={18} />
+                    </motion.div>
+                  </button>
+
+                  <AnimatePresence>
+                    {mobileCoreValuesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="ml-4 flex flex-col gap-4 text-base text-gray-400 overflow-hidden"
+                      >
+                        <div className="pt-4 flex flex-col gap-4">
+                          <Link href="/core-values/social-impact" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Social Impact
+                          </Link>
+                          <Link href="/core-values/dei" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            DEI
+                          </Link>
+                          <Link href="/core-values/env-sustainability" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                            Env sustainability
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <Link href="/vision" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                  Vision
+                </Link>
+
+                <Link href="/contact" onClick={() => setOpen(false)} className="hover:text-cyan-400 transition">
+                  Contact
+                </Link>
+              </nav>
+            </motion.aside>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

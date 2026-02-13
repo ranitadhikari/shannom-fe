@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Building2, Lightbulb, Wind, Trash2, Zap, Car } from "lucide-react";
+import Image from "next/image";
 
 export default function SmartCitiesPage() {
   return (
@@ -41,7 +42,7 @@ export default function SmartCitiesPage() {
       <section className="py-24 bg-[#050505]">
         <div className="w-11/12 md:w-5/6 mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10">
-            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80" alt="Smart Cities AI" className="object-cover w-full h-full opacity-60" />
+            <Image src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80" alt="Smart Cities AI" fill className="object-cover opacity-60" />
           </div>
           <motion.div>
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Sustainable <span className="text-cyan-400">Urban Future</span></h2>

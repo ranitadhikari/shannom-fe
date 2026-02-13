@@ -5,12 +5,12 @@ import {
   Users, 
   Heart, 
   ShieldCheck, 
-  TrendingUp, 
   GraduationCap, 
   Globe, 
   Eye, 
   Zap 
 } from "lucide-react";
+import Image from "next/image";
 
 export default function VisionPage() {
   return (
@@ -19,10 +19,11 @@ export default function VisionPage() {
       {/* ================= HERO SECTION ================= */}
       <section className="relative min-h-screen flex items-center justify-center py-20">
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="https://img.trae.ai/90c8853a-c854-476c-829d-64908953930b.png" 
             alt="Vision Background" 
-            className="w-full h-full object-cover opacity-40"
+            fill
+            className="object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#050505]" />
         </div>
@@ -79,10 +80,11 @@ export default function VisionPage() {
               transition={{ duration: 0.8 }}
               className="relative aspect-video rounded-3xl overflow-hidden border border-white/10"
             >
-              <img 
+              <Image 
                 src="https://res.cloudinary.com/dwserksvu/image/upload/v1770924721/262210ec-aa0a-451a-80e2-e1dee20f31ec_mqaxo6.jpg" 
                 alt="AI for Public Good" 
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </motion.div>
           </div>
@@ -96,10 +98,11 @@ export default function VisionPage() {
               transition={{ duration: 0.8 }}
               className="order-2 md:order-1 relative aspect-video rounded-3xl overflow-hidden border border-white/10"
             >
-              <img 
+              <Image 
                 src="https://res.cloudinary.com/dwserksvu/image/upload/v1770924964/fei-fei-li-thumbnail-image_i2miow.jpg" 
                 alt="Human-Centric AI" 
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </motion.div>
             <motion.div
@@ -206,10 +209,11 @@ export default function VisionPage() {
               transition={{ duration: 0.8 }}
               className="relative aspect-video rounded-3xl overflow-hidden border border-white/10"
             >
-              <img 
+              <Image 
                 src="https://res.cloudinary.com/dwserksvu/image/upload/v1770925260/innovation-cover_tzblee.jpg" 
                 alt="Innovation with Purpose" 
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </motion.div>
           </div>
@@ -252,10 +256,11 @@ export default function VisionPage() {
       {/* ================= FINAL VISION STATEMENT ================= */}
       <section className="py-32 relative">
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="https://img.trae.ai/398379c3-718e-4a87-9b43-2415d862f92f.png" 
             alt="Vision Footer" 
-            className="w-full h-full object-cover opacity-20"
+            fill
+            className="object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>

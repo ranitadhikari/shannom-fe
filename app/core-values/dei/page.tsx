@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Users, Shield, Target } from "lucide-react";
+import { Users, Shield, Target } from "lucide-react";
 import Image from "next/image";
 
 export default function DEIPage() {
@@ -51,7 +51,7 @@ export default function DEIPage() {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl text-gray-300 italic leading-relaxed max-w-5xl mx-auto"
           >
-            "Building a future where technology reflects the diversity of the world it serves."
+            &quot;Building a future where technology reflects the diversity of the world it serves.&quot;
           </motion.p>
         </div>
       </section>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Bus, Car, Navigation, Shield, Zap, Clock } from "lucide-react";
+import Image from "next/image";
 
 export default function TransportIndustryPage() {
   return (
@@ -61,7 +62,7 @@ export default function TransportIndustryPage() {
             </div>
           </motion.div>
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10">
-            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80" alt="Transport AI" className="object-cover w-full h-full opacity-60" />
+            <Image src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80" alt="Transport AI" fill className="object-cover opacity-60" />
           </div>
         </div>
       </section>
