@@ -97,7 +97,7 @@ export default function FertilizerSubsidyPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">The Multi-Layered <span className="text-cyan-400">AI Solution</span></h2>
             <p className="text-gray-400 max-w-2xl mx-auto">Our architecture integrates multiple data streams to create a comprehensive defense against subsidy leakage.</p>
           </div>
-          
+
           <div className="space-y-12">
             {[
               {
@@ -116,7 +116,7 @@ export default function FertilizerSubsidyPage() {
                 icon: ShieldCheck
               }
             ].map((layer, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -139,22 +139,25 @@ export default function FertilizerSubsidyPage() {
       {/* --- FRAUD SCENARIOS --- */}
       <section className="py-24 bg-[#050505]">
         <div className="w-11/12 md:w-5/6 mx-auto">
-          <h2 className="text-3xl font-bold mb-12">Illustrative <span className="text-cyan-400">Fraud Scenarios</span> We Catch</h2>
+          <h2 className="text-3xl font-bold mb-12">
+            Illustrative <span className="text-cyan-400">Risk Patterns</span> We Identify
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              "The &apos;Midnight Retailer&apos;: Bulk POS transactions occurring outside business hours with sequential Aadhaar IDs.",
-              "The &apos;Dead-End Truck&apos;: Transport vehicles departing from warehouses but never reaching their registered retail destination.",
-              "The &apos;Soil Paradox&apos;: High-volume fertilizer sales in regions where soil health records show minimal requirement.",
-              "The &apos;Ghost Farmer&apos;: Multiple small-scale transactions mapped to the same biometric signature across different districts."
+              "After-Hours Transaction Clusters: Unusual spikes in retail billing activity occurring consistently outside standard operating hours.",
+              "Supply Chain Breakpoints: Shipments recorded as dispatched but lacking downstream sales or inventory reconciliation at destination points.",
+              "Demand–Consumption Mismatch: High-volume sales reported in regions where historical demand indicators show limited requirement.",
+              "Identity & Usage Anomalies: Repeated transaction patterns linked to overlapping identifiers across geographically distant locations."
             ].map((scenario, i) => (
               <div key={i} className="flex gap-4 p-6 bg-white/5 rounded-xl border-l-4 border-cyan-400">
                 <CheckCircle2 className="text-cyan-400 shrink-0" size={24} />
-                <p className="text-gray-300 italic">&quot;{scenario}&quot;</p>
+                <p className="text-gray-300 italic">{scenario}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* --- ROADMAP --- */}
       <section className="py-24">
