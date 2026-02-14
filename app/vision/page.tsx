@@ -76,7 +76,7 @@ export default function VisionPage() {
               <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
                 <h3 className="text-cyan-400 font-semibold mb-2">Human-Centric Intelligence</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  AI that augments leadership and decision-making —
+                  AI that augments leadership and decision-making 
                   enhancing judgment without replacing accountability.
                 </p>
               </div>
