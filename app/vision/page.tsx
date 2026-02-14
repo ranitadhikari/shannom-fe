@@ -1,281 +1,233 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Users, 
-  Heart, 
-  ShieldCheck, 
-  GraduationCap, 
-  Globe, 
-  Eye, 
-  Zap 
+import {
+  Users,
+  Heart,
+  ShieldCheck,
+  GraduationCap,
+  Globe,
+  Eye,
+  Zap,
 } from "lucide-react";
 import Image from "next/image";
 
 export default function VisionPage() {
   return (
-    <div className="bg-[#050505] text-white overflow-hidden">
-      
-      {/* ================= HERO SECTION ================= */}
-      <section className="relative min-h-screen flex items-center justify-center py-20">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="https://img.trae.ai/90c8853a-c854-476c-829d-64908953930b.png" 
-            alt="Vision Background" 
-            fill
-            className="object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#050505]" />
-        </div>
+    <div className="bg-black/70 text-white overflow-hidden relative">
 
-        <div className="relative z-10 w-11/12 md:w-5/6 mx-auto text-center">
+      {/* ================= GLOBAL BACKGROUND ================= */}
+      {/* ================= GLOBAL BACKGROUND ================= */}
+      <div className="fixed inset-0 -z-10">
+        <Image
+          src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg"
+          alt="Futuristic AI Technology Background"
+          fill
+          priority
+          quality={100}
+          sizes="100vw"
+          className="object-cover"
+        />
+
+        {/* Softer Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/75" />
+      </div>
+
+
+      {/* ================= HERO SECTION ================= */}
+      <section className="relative min-h-screen flex items-center justify-center px-6">
+
+        <div className="relative z-10 w-full max-w-6xl mx-auto text-center">
+
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.9 }}
+            className="space-y-12"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Vision of <span className="text-cyan-400">Shannom</span>
-            </h1>
-            <p className="text-2xl md:text-3xl font-light text-gray-300 mb-8 max-w-4xl mx-auto">
-              Building Artificial Intelligence for Human Progress, Public Good, and Global Impact
-            </p>
-            <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              At Shannom, we envision Artificial Intelligence as a transformational force for human advancement, 
-              capable of reshaping economies, governance, and everyday life—much like electricity and the internet once did. 
-              Our vision is to harness AI not as an abstract technology, but as a practical, ethical, and inclusive enabler of real-world impact.
-            </p>
+
+            {/* Headline */}
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+                Sovereign AI for
+                <span className="block text-cyan-400 mt-2">
+                  Institutional Transformation
+                </span>
+              </h1>
+
+              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Engineering responsible, human-centered Artificial Intelligence
+                that strengthens governance, accelerates institutions,
+                and advances society at scale.
+              </p>
+            </div>
+
+            {/* Strategic Value Pillars (Compact & Powerful) */}
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto pt-6">
+
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
+                <h3 className="text-cyan-400 font-semibold mb-2">Sovereign Infrastructure</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  National-grade AI systems designed for security,
+                  compliance, and long-term institutional control.
+                </p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
+                <h3 className="text-cyan-400 font-semibold mb-2">Human-Centric Intelligence</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  AI that augments leadership and decision-making —
+                  enhancing judgment without replacing accountability.
+                </p>
+              </div>
+
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
+                <h3 className="text-cyan-400 font-semibold mb-2">Responsible by Design</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Built with transparency, auditability, bias mitigation,
+                  and global compliance standards embedded from day one.
+                </p>
+              </div>
+
+            </div>
+
           </motion.div>
+
         </div>
       </section>
 
+
       {/* ================= CORE VISION PILLARS ================= */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="w-11/12 md:w-5/6 mx-auto">
-          
-          {/* AI for All */}
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-32">
+      <section className="py-24 relative">
+        <div className="w-11/12 md:w-5/6 mx-auto space-y-32">
+
+          {/* AI FOR ALL */}
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
             >
               <div className="w-16 h-16 bg-cyan-400/10 rounded-2xl flex items-center justify-center mb-6">
                 <Users className="text-cyan-400" size={32} />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">AI for All, <span className="text-cyan-400">Not Just a Few</span></h2>
+
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                AI for All, <span className="text-cyan-400">Not Just a Few</span>
+              </h2>
+
               <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                Shannom believes that the true power of AI lies in its ability to democratise opportunity. 
-                We are committed to building AI systems that are accessible, inclusive, and meaningful for everyone—across geographies, languages, and socio-economic boundaries.
+                The future of AI must not be centralized in a handful of global
+                corporations. Shannom develops sovereign AI systems that can be
+                deployed across ministries, public institutions, and enterprises —
+                ensuring national capability and institutional independence.
               </p>
+
               <p className="text-gray-400 text-lg leading-relaxed">
-                Our vision is to ensure that AI strengthens public services, empowers citizens, and reaches the last mile.
+                Our architecture is modular, scalable, and adaptable —
+                designed to operate in diverse environments while preserving
+                security, compliance, and performance.
               </p>
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative aspect-video rounded-3xl overflow-hidden border border-white/10"
-            >
-              <Image 
-                src="https://res.cloudinary.com/dwserksvu/image/upload/v1770924721/262210ec-aa0a-451a-80e2-e1dee20f31ec_mqaxo6.jpg" 
-                alt="AI for Public Good" 
+
+            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10">
+              <Image
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop"
+                alt="AI Technology Infrastructure"
                 fill
                 className="object-cover"
               />
-            </motion.div>
+            </div>
           </div>
 
-          {/* Human-Centric Intelligence */}
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-32">
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="order-2 md:order-1 relative aspect-video rounded-3xl overflow-hidden border border-white/10"
-            >
-              <Image 
-                src="https://res.cloudinary.com/dwserksvu/image/upload/v1770924964/fei-fei-li-thumbnail-image_i2miow.jpg" 
-                alt="Human-Centric AI" 
+          {/* HUMAN CENTRIC */}
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 order-2 md:order-1">
+              <Image
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2000&auto=format&fit=crop"
+                alt="Human Centered Artificial Intelligence"
                 fill
                 className="object-cover"
               />
-            </motion.div>
+            </div>
+
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
               className="order-1 md:order-2"
             >
               <div className="w-16 h-16 bg-cyan-400/10 rounded-2xl flex items-center justify-center mb-6">
                 <Heart className="text-cyan-400" size={32} />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Human-Centric <span className="text-cyan-400">Intelligence</span></h2>
+
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Human-Centric <span className="text-cyan-400">Intelligence</span>
+              </h2>
+
               <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                We design AI that augments human decision-making rather than replacing it. At Shannom, technology is always guided by human values—empathy, accountability, and trust.
+                Artificial Intelligence must enhance human judgment — not
+                replace responsibility. Our systems are designed to augment
+                policymakers, administrators, and institutional leaders with
+                precise insights and predictive intelligence.
               </p>
+
               <p className="text-gray-400 text-lg leading-relaxed">
-                AI, in our view, must serve people, respect human agency, and operate under clear human oversight.
+                Transparency, explainability, and auditability are embedded into
+                our lifecycle — from model design to deployment and oversight.
               </p>
             </motion.div>
           </div>
 
-          {/* Governance & Responsible AI */}
-          <div className="grid md:grid-cols-2 gap-8 mb-32">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white/5 border border-white/10 p-10 rounded-3xl"
-            >
+          {/* GOVERNANCE & RESPONSIBLE AI */}
+          <div className="grid md:grid-cols-2 gap-8">
+
+            <div className="bg-white/5 border border-white/10 p-10 rounded-3xl backdrop-blur-md hover:border-cyan-400/40 transition">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <ShieldCheck className="text-cyan-400" />
                 AI for Governance
               </h3>
-              <p className="text-gray-400 mb-6">Shannom sees AI as a catalyst for transparent, responsive, and evidence-based governance.</p>
-              <ul className="space-y-4 text-gray-400">
-                <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
-                  Make better decisions using data-driven insights
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
-                  Deliver services efficiently and equitably
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
-                  Enhance citizen engagement and trust
-                </li>
-              </ul>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white/5 border border-white/10 p-10 rounded-3xl"
-            >
+              <p className="text-gray-400 leading-relaxed">
+                We empower governments and institutions with predictive analytics,
+                operational intelligence, and automated insights that improve
+                policy delivery, risk monitoring, and citizen services.
+              </p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 p-10 rounded-3xl backdrop-blur-md hover:border-cyan-400/40 transition">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <Eye className="text-cyan-400" />
                 Responsible & Trusted AI
               </h3>
-              <p className="text-gray-400 mb-6">Trust is foundational to adoption. Shannom is deeply committed to responsible AI development.</p>
-              <ul className="space-y-4 text-gray-400">
-                <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
-                  Bias-aware and explainable AI
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
-                  Strong data protection and security
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0" />
-                  Accountability across the AI lifecycle
-                </li>
-              </ul>
-            </motion.div>
-          </div>
+              <p className="text-gray-400 leading-relaxed">
+                Responsible AI is not an afterthought — it is foundational.
+                We implement strong governance frameworks, bias mitigation,
+                security protocols, and compliance standards aligned with
+                global best practices.
+              </p>
+            </div>
 
-          {/* Innovation with Purpose */}
-          <div className="grid md:grid-cols-2 gap-16 items-center mb-32">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="w-16 h-16 bg-cyan-400/10 rounded-2xl flex items-center justify-center mb-6">
-                <Zap className="text-cyan-400" size={32} />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Innovation <span className="text-cyan-400">with Purpose</span></h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                Shannom views AI as a powerful engine for economic growth, innovation, and workforce productivity. 
-                We aim to help organisations and governments move from experimentation to scalable, real-world AI deployments that deliver measurable value.
-              </p>
-              <p className="text-gray-400 text-lg leading-relaxed">
-                Our focus is on impact-driven innovation, not technology for its own sake.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative aspect-video rounded-3xl overflow-hidden border border-white/10"
-            >
-              <Image 
-                src="https://res.cloudinary.com/dwserksvu/image/upload/v1770925260/innovation-cover_tzblee.jpg" 
-                alt="Innovation with Purpose" 
-                fill
-                className="object-cover"
-              />
-            </motion.div>
           </div>
-
-          {/* Capacity Building & Global Good */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="p-10 rounded-3xl bg-gradient-to-br from-cyan-400/20 to-transparent border border-cyan-400/10"
-            >
-              <GraduationCap className="text-cyan-400 mb-6" size={40} />
-              <h3 className="text-2xl font-bold mb-4">Building AI-Ready Institutions</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Our vision extends beyond solutions to capacity building. Shannom seeks to empower institutions and professionals 
-                with AI literacy, data fluency, and decision science capabilities—ensuring sustainable, long-term adoption of AI.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="p-10 rounded-3xl bg-gradient-to-br from-blue-500/20 to-transparent border border-blue-500/10"
-            >
-              <Globe className="text-blue-400 mb-6" size={40} />
-              <h3 className="text-2xl font-bold mb-4">Global Good, Rooted Locally</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Shannom’s vision is global. We aspire to contribute to AI for Global Good, supporting inclusive growth, 
-                cross-border collaboration, and balanced global AI governance—ensuring emerging economies are active creators, 
-                not passive consumers, of AI.
-              </p>
-            </motion.div>
-          </div>
-
         </div>
       </section>
 
-      {/* ================= FINAL VISION STATEMENT ================= */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="https://img.trae.ai/398379c3-718e-4a87-9b43-2415d862f92f.png" 
-            alt="Vision Footer" 
-            fill
-            className="object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
-        
-        <div className="relative z-10 w-11/12 md:w-3/4 mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-cyan-400 uppercase tracking-widest font-bold mb-8">Our Vision Statement</h2>
-            <p className="text-3xl md:text-5xl font-bold italic leading-tight text-white">
-              “To build human-centric, responsible AI systems that empower governments, institutions, and communities—driving inclusive growth and lasting public good.”
-            </p>
-          </motion.div>
+      {/* ================= FUTURE COMMITMENT SECTION ================= */}
+      <section className="py-32 text-center relative">
+        <div className="w-11/12 md:w-3/4 mx-auto">
+          <h2 className="text-cyan-400 uppercase tracking-widest font-bold mb-8">
+            Our Vision Statement
+          </h2>
+
+          <p className="text-3xl md:text-5xl font-bold italic leading-tight mb-10">
+            “To engineer sovereign, human-centric, and responsible AI systems
+            that empower institutions and drive inclusive growth.”
+          </p>
+
+          <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
+            We are committed to shaping a future where Artificial Intelligence
+            strengthens national capability, enhances institutional resilience,
+            and creates sustainable impact across society.
+          </p>
         </div>
       </section>
 
