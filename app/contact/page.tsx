@@ -65,6 +65,8 @@ export default function ContactPage() {
             Build With <span className="text-cyan-400">ShannOm</span>
           </motion.h1>
 
+          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
