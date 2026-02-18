@@ -36,7 +36,7 @@ export default function HealthcareIndustryPage() {
             className="mt-6 text-lg text-gray-200 max-w-2xl"
           >
             From overwhelmed public hospitals to intelligent digital care
-            systems — Shannom builds sovereign AI infrastructure for
+            systems ShannOm builds sovereign AI infrastructure for
             national-scale healthcare modernization.
           </motion.p>
         </div>
@@ -128,7 +128,7 @@ export default function HealthcareIndustryPage() {
 
             <p className="mt-8 text-gray-400">
               Shannom integrates sovereign AI systems into hospital
-              infrastructure — enabling predictive diagnostics,
+              infrastructure enabling predictive diagnostics,
               real-time decision support, and intelligent
               healthcare optimization at scale.
             </p>

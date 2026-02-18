@@ -20,6 +20,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
+
+    
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -43,7 +45,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <Image src={logo} alt="Logo" width={45} height={45} />
             <span className="font-bold text-xl text-white">
-              Shannom
+              ShannOm
               <span className="text-cyan-400 group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.7)] transition">
                 .ai
               </span>

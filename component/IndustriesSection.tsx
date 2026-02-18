@@ -75,7 +75,7 @@ export default function IndustriesSection() {
           </h2>
 
           <p className="mt-6 text-white/70 text-lg">
-            Shannom builds scalable AI systems across critical industries —
+            ShannOm builds scalable AI systems across critical industries 
             engineered for governance alignment, operational intelligence, and long-term transformation.
           </p>
         </div>

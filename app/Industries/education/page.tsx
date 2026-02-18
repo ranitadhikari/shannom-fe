@@ -200,7 +200,7 @@ export default function EducationPage() {
 
           <p className="text-gray-300 text-lg leading-relaxed">
             Structured AI deployment transforms education into
-            a high-impact national industry — generating skilled
+            a high-impact national industry generating skilled
             human capital and accelerating economic growth.
           </p>
 

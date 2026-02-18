@@ -36,7 +36,7 @@ export default function AboutPage() {
         transition={{ delay: 0.3, duration: 0.8 }}
         className="mt-6 text-lg text-gray-200 max-w-2xl"
       >
-        Shannom transforms artificial intelligence into public
+        ShannOm transforms artificial intelligence into public
         infrastructure aligning governance, machine learning,
         and institutional trust to create measurable national impact.
       </motion.p>
@@ -230,12 +230,12 @@ export default function AboutPage() {
 
         <div className="relative w-11/12 md:w-4/6 mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-10">
-            Why <span className="text-cyan-400">Shannom?</span>
+            Why <span className="text-cyan-400">ShannOm?</span>
           </h2>
 
           <p className="text-gray-300 text-lg leading-relaxed">
             As AI shifts from experimentation to essential infrastructure,
-            Shannom ensures it serves the public good with efficiency,
+            ShannOm ensures it serves the public good with efficiency,
             trust, and measurable value.
           </p>
 

@@ -62,7 +62,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            Build With <span className="text-cyan-400">Shannom</span>
+            Build With <span className="text-cyan-400">ShannOm</span>
           </motion.h1>
 
           <motion.p

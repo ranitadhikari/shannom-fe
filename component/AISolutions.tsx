@@ -40,8 +40,8 @@ export default function AISolutions() {
         </h2>
 
         <p className="mt-6 max-w-2xl mx-auto text-white/70 text-lg">
-          Shannom develops intelligent systems that connect policy, technology,
-          and execution — creating scalable digital ecosystems.
+          ShannOm develops intelligent systems that connect policy, technology,
+          and execution creating scalable digital ecosystems.
         </p>
 
         {/* Cards */}

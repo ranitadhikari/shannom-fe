@@ -38,7 +38,7 @@ export default function FertilizerSubsidyPage() {
             >
               <h2 className="text-3xl font-bold mb-6">Executive Summary</h2>
               <p className="text-gray-400 text-lg leading-relaxed">
-                India&apos;s fertilizer subsidy program is a lifeline for millions of farmers. However, the system faces significant challenges including diversion for industrial use, cross-border smuggling, and &quot;ghost&quot; beneficiaries. Shannom&apos;s AI-driven solution provides a multi-layered detection architecture that strengthens the integrity of the entire supply chain.
+                India&apos;s fertilizer subsidy program is a lifeline for millions of farmers. However, the system faces significant challenges including diversion for industrial use, cross-border smuggling, and &quot;ghost&quot; beneficiaries. ShannOm&apos;s AI-driven solution provides a multi-layered detection architecture that strengthens the integrity of the entire supply chain.
               </p>
             </motion.div>
             <div className="grid grid-cols-2 gap-6">
